@@ -21,6 +21,7 @@ var pingPong = function(userNumber) {
 
 $(document).ready(function() {
   $("form").submit(function(event) {
+    $("li").remove();
     var userInput = $("input#input-number").val();
     var pingPongOutputs = pingPong(userInput);
     pingPongOutputs.forEach(function(pingPongOutput) {
