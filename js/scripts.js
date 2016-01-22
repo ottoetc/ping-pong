@@ -15,16 +15,17 @@ var pingPong = function(userNumber) {
     else {
       output.push(loopCounter);
     }
-
   }
-  console.log(output);
   return output;
 };
 
 $(document).ready(function() {
   $("form").submit(function(event) {
-    var userInput = $("input#number").val();
-    var pingPongOutput = pingPong(userInput);
-
+    var userInput = $("input#input-number").val();
+    var pingPongOutputs = pingPong(userInput);
+    pingPongOutputs.forEach(function(pingPongOutput) {
+      $("ul").append("<li>"+ pingPongOutput +"</li>");
+    });
+    event.preventDefault();
   });
 });
